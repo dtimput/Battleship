@@ -7,11 +7,18 @@ class Ship {
 
   hit() {
     // Runs when a ship is hit
+    if (!this.isSunk()) {
+      this.timesHit += 1;
+      this.isSunk();
+    }
   }
 
   isSunk() {
-    if (length === timesHit) {
-      // Ship is Sunk
+    // Runs when a ship is sunk
+    if (this.length === this.timesHit) {
+      this.sunk = true;
     }
   }
 }
+
+export default Ship;
